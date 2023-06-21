@@ -1,0 +1,26 @@
+@property --rotate{
+    syntax: "<angle>";
+    initial-value: 130deg;
+    inherits: false;
+}
+
+body{
+    background-image: linear-gradient(
+        var(--rotate)
+        , rgb(4, 145, 4), rgb(211, 211, 9), rgb(233, 4, 4));
+        animation: spin 5s linear infinite;
+        height: 100vh;
+        background-repeat: no-repeat;
+}
+
+@keyframes spin{
+    0%{
+        --rotate: 0deg;
+    }
+    50%{
+        --rotate: 180deg;
+    }
+    100%{
+        --rotate: 360deg;
+    }
+}

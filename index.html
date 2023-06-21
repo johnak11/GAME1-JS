@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOTTO-GAME</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    
+    <!-- <marquee behavior="" direction="right"> -->
+        <div class="container" style="width: fit-content;"><h3 style="text-align: center;" class="mt-3 p-2 bg-success">LOTTO GAME</h3></div>
+    <!-- </marquee> -->
+    <marquee behavior="" direction="right">
+        <div class="container" style="width: fit-content;"><h4 class="bg-black text-white mt-3 p-2" style="text-align: center;">PREDICT AND WIN</h4></div>
+    </marquee>
+    <div class="container" style="width: fit-content;"><h4 style="text-align: center;" class="mt-4 p-2 bg-info text-white">How to Play :</h4></div>
+    <div class="container">
+    <p style="font-size: 25px;">Predict and enter a random number between 1-10 in the input box below. You stand a winning chance if your predicted number equals the randomized number and you stand a losing chance if otherwise.</p>
+    
+    <div class="container">
+        <input type="number" id="enter" placeholder="Predict and enter a number">
+        <button onclick="predict()" id="play">Enter</button>
+    </div>
+    
+    <div class="container">
+    <p id="result" class="mt-3"></p>
+    <p id="chance"></p>
+    </div>
+    </div>
+    
+
+
+
+
+
+    <script>
+        function predict(){
+            
+            let z= (Math.floor(Math.random() *20) )
+            console.log(z);
+            document.getElementById('result').innerHTML=z
+
+
+            let x= document.getElementById('enter').value;
+            if(x===z){
+                document.getElementById('chance').innerHTML="YOU WIN! 😊👍"
+            }
+            else{
+                document.getElementById('chance').innerHTML= "YOU LOSE! 😥 BETTER LUCK NEXT TIME"
+            }if(x<=0 || x>=21){
+                document.getElementById('chance').innerHTML= "INVALID INPUT!"
+            }
+        }
+    </script>
+    
+
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
